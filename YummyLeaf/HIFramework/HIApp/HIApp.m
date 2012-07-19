@@ -169,7 +169,7 @@
  */
 - (void)glkViewControllerUpdate:(GLKViewController *)controller
 {
-    [self frame:0.0f];          //[TEMP]    elapse time calculation unfinish
+    [self frame:0.033f];          //[TEMP]    elapse time calculation unfinish
 }
 
 

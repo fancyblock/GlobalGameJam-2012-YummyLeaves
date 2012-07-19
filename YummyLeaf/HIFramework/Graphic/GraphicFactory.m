@@ -83,6 +83,21 @@ static BOOL m_safeFlag = NO;
 }
 
 
+/**
+ * @desc    create movieclip
+ * @para    imgName
+ * @para    interval
+ * @return  movieClip
+ */
+- (MovieClip*)CreateSprite:(NSString*)imgName withInterval:(float)interval
+{
+    MovieClip* mc = [[MovieClip alloc] init];
+    
+    //TODO 
+    
+    return mc;
+}
+
 //TODO 
 
 

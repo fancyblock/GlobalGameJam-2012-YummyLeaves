@@ -45,6 +45,7 @@
 		CF786EFA15B7FE8900099D71 /* LevelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CF786EF915B7FE8900099D71 /* LevelFactory.m */; };
 		CF786EFD15B804FB00099D71 /* SubLeafInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CF786EFC15B804FB00099D71 /* SubLeafInfo.m */; };
 		CF786F0015B816AD00099D71 /* ProgressUI.m in Sources */ = {isa = PBXBuildFile; fileRef = CF786EFF15B816AC00099D71 /* ProgressUI.m */; };
+		CF786F0315B8184C00099D71 /* MovieClip.m in Sources */ = {isa = PBXBuildFile; fileRef = CF786F0215B8184C00099D71 /* MovieClip.m */; };
 		CF7B773A15907F79006F03C6 /* RenderCore.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7B773915907F79006F03C6 /* RenderCore.m */; };
 		CF7B774115908129006F03C6 /* TaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7B774015908129006F03C6 /* TaskManager.m */; };
 		CF7B774415908F23006F03C6 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7B774315908F23006F03C6 /* Task.m */; };
@@ -113,6 +114,8 @@
 		CF786EFC15B804FB00099D71 /* SubLeafInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SubLeafInfo.m; path = YummyLeaf/SubLeafInfo.m; sourceTree = "<group>"; };
 		CF786EFE15B816AC00099D71 /* ProgressUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProgressUI.h; path = YummyLeaf/ProgressUI.h; sourceTree = "<group>"; };
 		CF786EFF15B816AC00099D71 /* ProgressUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProgressUI.m; path = YummyLeaf/ProgressUI.m; sourceTree = "<group>"; };
+		CF786F0115B8184C00099D71 /* MovieClip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovieClip.h; path = Graphic/MovieClip.h; sourceTree = "<group>"; };
+		CF786F0215B8184C00099D71 /* MovieClip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MovieClip.m; path = Graphic/MovieClip.m; sourceTree = "<group>"; };
 		CF7B773815907F79006F03C6 /* RenderCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RenderCore.h; path = Graphic/RenderCore.h; sourceTree = "<group>"; };
 		CF7B773915907F79006F03C6 /* RenderCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RenderCore.m; path = Graphic/RenderCore.m; sourceTree = "<group>"; };
 		CF7B773F15908129006F03C6 /* TaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskManager.h; path = Task/TaskManager.h; sourceTree = "<group>"; };
@@ -155,6 +158,8 @@
 				CF4FFE7A159F5B3E001C8234 /* Sprite.m */,
 				CF5495C115A1FFAB004CE6A6 /* GraphicFactory.h */,
 				CF5495C215A1FFAB004CE6A6 /* GraphicFactory.m */,
+				CF786F0115B8184C00099D71 /* MovieClip.h */,
+				CF786F0215B8184C00099D71 /* MovieClip.m */,
 			);
 			name = Graphic;
 			sourceTree = "<group>";
@@ -456,6 +461,7 @@
 				CF786EFA15B7FE8900099D71 /* LevelFactory.m in Sources */,
 				CF786EFD15B804FB00099D71 /* SubLeafInfo.m in Sources */,
 				CF786F0015B816AD00099D71 /* ProgressUI.m in Sources */,
+				CF786F0315B8184C00099D71 /* MovieClip.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
