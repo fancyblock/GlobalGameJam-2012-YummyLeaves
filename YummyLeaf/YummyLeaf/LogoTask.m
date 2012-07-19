@@ -19,7 +19,12 @@
     [m_bg SetUVFrom:CGPointMake(0, 0) to:CGPointMake(1, 1)];
     m_time = 0.0f;
     
+    // initial the sound
     [TaskSet sharedInstance]._touchSE = [[SoundManager sharedInstance] LoadSound:@"wrong.wav"];
+    [TaskSet sharedInstance]._eatSE = [[SoundManager sharedInstance] LoadSound:@"eat.wav"];
+    [TaskSet sharedInstance]._matchSE = [[SoundManager sharedInstance] LoadSound:@"right.wav"];
+    [TaskSet sharedInstance]._bgm = [[SoundManager sharedInstance] LoadSound:@"bgm.mp3"];
+    
 }
 
 - (void)onEnd

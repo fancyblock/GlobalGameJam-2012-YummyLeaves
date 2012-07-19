@@ -10,4 +10,25 @@
 
 @implementation LevelInfo
 
+@synthesize _epsion;
+@synthesize _leafCnt;
+@synthesize _aimAngle;
+@synthesize _subLeaves;
+@synthesize _rotateSpeed;
+@synthesize _matchLeafType;
+
+- (id)init
+{
+    [super init];
+    
+    self._rotateSpeed = 0.015f;
+    self._epsion = 0.08f;
+    self._aimAngle = 0.0f;
+    self._leafCnt = 0;
+    self._matchLeafType = 0;
+    self._subLeaves = [[NSMutableArray alloc] init];
+    
+    return self;
+}
+
 @end

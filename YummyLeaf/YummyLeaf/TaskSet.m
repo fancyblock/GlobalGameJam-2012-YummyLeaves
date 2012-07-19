@@ -21,7 +21,9 @@ static TaskSet* m_instance = nil;
 @synthesize _rotateSpeed;
 
 @synthesize _touchSE;
-
+@synthesize _eatSE;
+@synthesize _matchSE;
+@synthesize _bgm;
 
 
 + (TaskSet*)sharedInstance

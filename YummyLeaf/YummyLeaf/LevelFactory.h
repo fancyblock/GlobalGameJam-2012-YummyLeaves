@@ -8,14 +8,22 @@
 
 #import <Foundation/Foundation.h>
 #import "LevelInfo.h"
+#import "SubLeafInfo.h"
+
+#define MAX_LEAF    20
+
 
 @interface LevelFactory : NSObject
 {
-    //TODO 
+    NSMutableArray* m_resLib;
+    int m_uLib[MAX_LEAF];
+    int m_vLib[MAX_LEAF];
 }
 
 + (LevelFactory*)sharedInstance;
 
 - (LevelInfo*)CreateLevel:(int)level;
+
+- (SubLeafInfo*)CreateSubLeaf:(int)type;
 
 @end

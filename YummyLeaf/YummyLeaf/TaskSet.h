@@ -10,6 +10,9 @@
 #import "HIFramework.h"
 #import "LevelInfo.h"
 
+#define _angleInterval = 0.262f;
+#define _matchEpsion = 0.04f;
+
 
 @interface TaskSet : NSObject
 {
@@ -27,5 +30,8 @@
 @property (nonatomic, readwrite) float _rotateSpeed;
 
 @property (nonatomic, readwrite) int _touchSE;
+@property (nonatomic, readwrite) int _matchSE;
+@property (nonatomic, readwrite) int _eatSE;
+@property (nonatomic, readwrite) int _bgm;
 
 @end

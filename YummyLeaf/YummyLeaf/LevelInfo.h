@@ -10,4 +10,12 @@
 
 @interface LevelInfo : NSObject
 
+@property (nonatomic, readwrite) float _rotateSpeed;
+@property (nonatomic, readwrite) float _epsion;
+@property (nonatomic, readwrite) float _aimAngle;
+
+@property (nonatomic, readwrite) int _leafCnt;
+@property (nonatomic, readwrite) int _matchLeafType;
+@property (nonatomic, retain) NSMutableArray* _subLeaves;
+
 @end

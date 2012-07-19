@@ -8,6 +8,16 @@
 
 #import "HIFramework.h"
 
+#define STATE_RUNNING   1
+#define STATE_COMPLETE  2
+#define STATE_GAMEOVER  3
+#define STATE_PAUSE     4
+
+
+
 @interface GameTask : Task
+{
+    //TODO 
+}
 
 @end
