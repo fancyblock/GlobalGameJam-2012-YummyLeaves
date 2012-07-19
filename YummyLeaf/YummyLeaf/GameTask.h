@@ -7,6 +7,8 @@
 //
 
 #import "HIFramework.h"
+#import "LevelInfo.h"
+#import "ProgressUI.h"
 
 #define STATE_RUNNING   1
 #define STATE_COMPLETE  2
@@ -17,7 +19,32 @@
 
 @interface GameTask : Task
 {
-    //TODO 
+    LevelInfo* m_lvInfo;
+    
+    float m_curAngle;
+    float m_angleInterval;
+    
+    Sprite* m_bg;
+    Sprite* m_bg2;
+    Sprite* m_snakeBody;
+    MovieClip* m_snakeHead;
+    NSMutableArray* m_leafs;
+    Sprite* m_aimFrame1;
+    Sprite* m_aimFrame2;
+    Sprite* m_aimFrame3;
+    NSMutableArray* m_levels;
+    Sprite* m_bigSnake1;
+    Sprite* m_bigSnake2;
+    Sprite* m_failMark;
+    
+    int m_state;
+    int m_mark;
+    int m_failTimes;
+    int m_bigSnakeTime;
+    int m_gameOverTime;
+    int m_sunFlashTime;
+    
+    ProgressUI* m_progressUI;
 }
 
 @end

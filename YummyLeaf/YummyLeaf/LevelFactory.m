@@ -41,15 +41,15 @@ static LevelFactory* m_instance = nil;
     [m_resLib addObject:@"snake_head_leaf.png"];
     [m_resLib addObject:@"deco.png"];
     
-    m_uLib[0] = 119; m_vLib[0] = 67;
-    m_uLib[1] = 153; m_vLib[1] = 67;
-    m_uLib[2] = 187; m_vLib[2] = 67;
-    m_uLib[3] = 221; m_vLib[3] = 67;
-    m_uLib[4] = 119; m_vLib[4] = 133;
-    m_uLib[5] = 153; m_vLib[5] = 133;
-    m_uLib[6] = 187; m_vLib[6] = 133;
-    m_uLib[7] = 221; m_vLib[7] = 133;
-    m_uLib[8] = 449; m_vLib[8] = 0;
+    m_uLib[0] = 119.0f/256.0f; m_vLib[0] = 67.0f/256.0f;
+    m_uLib[1] = 153.0f/256.0f; m_vLib[1] = 67.0f/256.0f;
+    m_uLib[2] = 187.0f/256.0f; m_vLib[2] = 67.0f/256.0f;
+    m_uLib[3] = 221.0f/256.0f; m_vLib[3] = 67.0f/256.0f;
+    m_uLib[4] = 119.0f/256.0f; m_vLib[4] = 133.0f/256.0f;
+    m_uLib[5] = 153.0f/256.0f; m_vLib[5] = 133.0f/256.0f;
+    m_uLib[6] = 187.0f/256.0f; m_vLib[6] = 133.0f/256.0f;
+    m_uLib[7] = 221.0f/256.0f; m_vLib[7] = 133.0f/256.0f;
+    m_uLib[8] = 449.0f/512.0f; m_vLib[8] = 0.0f/512.0f;
     
     return self;
 }

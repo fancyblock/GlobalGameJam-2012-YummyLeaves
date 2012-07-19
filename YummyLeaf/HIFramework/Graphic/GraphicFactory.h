@@ -21,7 +21,7 @@
 
 - (Sprite*)CreateSprite:(NSString*)imgName;
 
-- (MovieClip*)CreateSprite:(NSString*)imgName withInterval:(float)interval;
+- (MovieClip*)CreateMovieClip:(NSString*)imgName withInterval:(float)interval;
 
 
 @end

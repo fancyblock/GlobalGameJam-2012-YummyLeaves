@@ -10,8 +10,8 @@
 #import "HIFramework.h"
 #import "LevelInfo.h"
 
-#define _angleInterval = 0.262f;
-#define _matchEpsion = 0.04f;
+#define _angleInterval 0.262f;
+#define _matchEpsion 0.04f;
 
 
 @interface TaskSet : NSObject
