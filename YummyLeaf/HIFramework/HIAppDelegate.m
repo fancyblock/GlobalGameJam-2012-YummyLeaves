@@ -7,6 +7,11 @@
 //
 
 #import "HIAppDelegate.h"
+#import "TaskSet.h"
+#import "LogoTask.h"
+#import "BeginTask.h"
+#import "GameTask.h"
+#import "EndTask.h"
 
 
 @implementation HIAppDelegate
@@ -30,7 +35,22 @@
     m_gameApp = [[HIApp alloc] initWithOrientation:ORIENTATION_PORTRAIT deviceType:DEVICE_IPHONE withFPS:30];
     
     // init the application
-    //TODO 
+    LogoTask* logoTask = [[LogoTask alloc] init];
+    BeginTask* beginTask = [[BeginTask alloc] init];
+    GameTask* gameTask = [[GameTask alloc] init];
+    EndTask* endTask = [[EndTask alloc] init];
+    
+    [TaskSet sharedInstance]._logoTask = logoTask;
+    [TaskSet sharedInstance]._beginTask = beginTask;
+    [TaskSet sharedInstance]._gameTask = gameTask;
+    [TaskSet sharedInstance]._endTask = endTask;
+    
+    [logoTask release];
+    [beginTask release];
+    [gameTask release];
+    [endTask release];
+    
+    [[TaskSet sharedInstance]._logoTask Start];
     
     self.window.rootViewController = m_gameApp.viewController;
     [self.window makeKeyAndVisible];

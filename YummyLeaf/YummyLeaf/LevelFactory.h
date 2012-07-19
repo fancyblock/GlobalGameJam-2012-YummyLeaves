@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LevelInfo.h"
 
 @interface LevelFactory : NSObject
+{
+    //TODO 
+}
+
++ (LevelFactory*)sharedInstance;
+
+- (LevelInfo*)CreateLevel:(int)level;
 
 @end

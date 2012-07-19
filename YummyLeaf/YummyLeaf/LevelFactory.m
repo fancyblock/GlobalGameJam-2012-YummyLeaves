@@ -10,4 +10,28 @@
 
 @implementation LevelFactory
 
+static LevelFactory* m_instance = nil;
+
+
++ (LevelFactory*)sharedInstance
+{
+    if( m_instance == nil )
+    {
+        m_instance = [[LevelFactory alloc] init];
+    }
+    
+    return m_instance;
+}
+
+
+- (LevelInfo*)CreateLevel:(int)level
+{
+    LevelInfo* levelInfo = nil;
+    
+    //TODO 
+    
+    return levelInfo;
+}
+
+
 @end

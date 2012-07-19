@@ -6,8 +6,11 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "Task.h"
+#import "HIFramework.h"
 
 @interface EndTask : Task
+{
+    Sprite* m_bg;
+}
 
 @end

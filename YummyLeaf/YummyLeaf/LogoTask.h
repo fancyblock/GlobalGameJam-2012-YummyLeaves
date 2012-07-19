@@ -6,8 +6,12 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "Task.h"
+#import "HIFramework.h"
 
 @interface LogoTask : Task
+{
+    Sprite* m_bg;
+    float m_time;
+}
 
 @end

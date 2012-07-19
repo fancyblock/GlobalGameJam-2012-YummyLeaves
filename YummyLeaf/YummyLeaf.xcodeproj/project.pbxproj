@@ -35,10 +35,17 @@
 		CF786ED615B7EC8400099D71 /* ggj2012logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CF786ED015B7EC8400099D71 /* ggj2012logo.png */; };
 		CF786ED715B7EC8400099D71 /* snake_head_leaf.png in Resources */ = {isa = PBXBuildFile; fileRef = CF786ED115B7EC8400099D71 /* snake_head_leaf.png */; };
 		CF786ED915B7EC9D00099D71 /* gameover.png in Resources */ = {isa = PBXBuildFile; fileRef = CF786ED815B7EC9D00099D71 /* gameover.png */; };
+		CF786EDD15B7EE3600099D71 /* LogoTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CF786EDC15B7EE3600099D71 /* LogoTask.m */; };
+		CF786EE015B7EFB100099D71 /* TaskSet.m in Sources */ = {isa = PBXBuildFile; fileRef = CF786EDF15B7EFB100099D71 /* TaskSet.m */; };
+		CF786EE315B7F37100099D71 /* BeginTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CF786EE215B7F37100099D71 /* BeginTask.m */; };
+		CF786EE615B7F38400099D71 /* GameTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CF786EE515B7F38400099D71 /* GameTask.m */; };
+		CF786EE915B7F41700099D71 /* EndTask.m in Sources */ = {isa = PBXBuildFile; fileRef = CF786EE815B7F41700099D71 /* EndTask.m */; };
+		CF786EEB15B7F78F00099D71 /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = CF786EEA15B7F78F00099D71 /* title.png */; };
+		CF786EF715B7FB9D00099D71 /* LevelInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CF786EF615B7FB9D00099D71 /* LevelInfo.m */; };
+		CF786EFA15B7FE8900099D71 /* LevelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CF786EF915B7FE8900099D71 /* LevelFactory.m */; };
 		CF7B773A15907F79006F03C6 /* RenderCore.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7B773915907F79006F03C6 /* RenderCore.m */; };
 		CF7B774115908129006F03C6 /* TaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7B774015908129006F03C6 /* TaskManager.m */; };
 		CF7B774415908F23006F03C6 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7B774315908F23006F03C6 /* Task.m */; };
-		CF7E1DE815661A13005D58C9 /* HIFramework_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CF7E1DE715661A13005D58C9 /* HIFramework_icon.png */; };
 		CF7E1DEC15661E12005D58C9 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7E1DEB15661E12005D58C9 /* OpenGLES.framework */; };
 		CF7E1DEF15661E9A005D58C9 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7E1DEE15661E9A005D58C9 /* GLKit.framework */; };
 		CF7E1DF315661FDD005D58C9 /* HIApp.m in Sources */ = {isa = PBXBuildFile; fileRef = CF7E1DF215661FDD005D58C9 /* HIApp.m */; };
@@ -49,14 +56,14 @@
 		CF30A79515AF340D00AAE45D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		CF4838361593890500529A53 /* TouchEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TouchEvent.h; path = Events/TouchEvent.h; sourceTree = "<group>"; };
 		CF4838371593890500529A53 /* TouchEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TouchEvent.m; path = Events/TouchEvent.m; sourceTree = "<group>"; };
-		CF4C16F31563FE7B0078F4D6 /* HIFramework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HIFramework.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF4C16F31563FE7B0078F4D6 /* YummyLeaf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YummyLeaf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF4C16F71563FE7B0078F4D6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CF4C16F91563FE7B0078F4D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CF4C16FB1563FE7B0078F4D6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		CF4C16FF1563FE7B0078F4D6 /* HIFramework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HIFramework-Info.plist"; sourceTree = "<group>"; };
+		CF4C16FF1563FE7B0078F4D6 /* YummyLeaf-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "YummyLeaf-Info.plist"; sourceTree = "<group>"; };
 		CF4C17011563FE7B0078F4D6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CF4C17031563FE7B0078F4D6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CF4C17051563FE7B0078F4D6 /* HIFramework-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HIFramework-Prefix.pch"; sourceTree = "<group>"; };
+		CF4C17051563FE7B0078F4D6 /* YummyLeaf-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YummyLeaf-Prefix.pch"; sourceTree = "<group>"; };
 		CF4C17061563FE7B0078F4D6 /* HIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HIAppDelegate.h; path = HIFramework/HIAppDelegate.h; sourceTree = "<group>"; };
 		CF4C17071563FE7B0078F4D6 /* HIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HIAppDelegate.m; path = HIFramework/HIAppDelegate.m; sourceTree = "<group>"; };
 		CF4FFE76159F0B3B001C8234 /* GLController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLController.h; path = HIApp/GLController.h; sourceTree = "<group>"; };
@@ -85,13 +92,27 @@
 		CF786ED015B7EC8400099D71 /* ggj2012logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ggj2012logo.png; sourceTree = "<group>"; };
 		CF786ED115B7EC8400099D71 /* snake_head_leaf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snake_head_leaf.png; sourceTree = "<group>"; };
 		CF786ED815B7EC9D00099D71 /* gameover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameover.png; sourceTree = "<group>"; };
+		CF786EDB15B7EE3600099D71 /* LogoTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogoTask.h; path = YummyLeaf/LogoTask.h; sourceTree = "<group>"; };
+		CF786EDC15B7EE3600099D71 /* LogoTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LogoTask.m; path = YummyLeaf/LogoTask.m; sourceTree = "<group>"; };
+		CF786EDE15B7EFB100099D71 /* TaskSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskSet.h; path = YummyLeaf/TaskSet.h; sourceTree = "<group>"; };
+		CF786EDF15B7EFB100099D71 /* TaskSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TaskSet.m; path = YummyLeaf/TaskSet.m; sourceTree = "<group>"; };
+		CF786EE115B7F37100099D71 /* BeginTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeginTask.h; path = YummyLeaf/BeginTask.h; sourceTree = "<group>"; };
+		CF786EE215B7F37100099D71 /* BeginTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BeginTask.m; path = YummyLeaf/BeginTask.m; sourceTree = "<group>"; };
+		CF786EE415B7F38400099D71 /* GameTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameTask.h; path = YummyLeaf/GameTask.h; sourceTree = "<group>"; };
+		CF786EE515B7F38400099D71 /* GameTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameTask.m; path = YummyLeaf/GameTask.m; sourceTree = "<group>"; };
+		CF786EE715B7F41700099D71 /* EndTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EndTask.h; path = YummyLeaf/EndTask.h; sourceTree = "<group>"; };
+		CF786EE815B7F41700099D71 /* EndTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EndTask.m; path = YummyLeaf/EndTask.m; sourceTree = "<group>"; };
+		CF786EEA15B7F78F00099D71 /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
+		CF786EF515B7FB9D00099D71 /* LevelInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelInfo.h; path = YummyLeaf/LevelInfo.h; sourceTree = "<group>"; };
+		CF786EF615B7FB9D00099D71 /* LevelInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelInfo.m; path = YummyLeaf/LevelInfo.m; sourceTree = "<group>"; };
+		CF786EF815B7FE8800099D71 /* LevelFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelFactory.h; path = YummyLeaf/LevelFactory.h; sourceTree = "<group>"; };
+		CF786EF915B7FE8900099D71 /* LevelFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelFactory.m; path = YummyLeaf/LevelFactory.m; sourceTree = "<group>"; };
 		CF7B773815907F79006F03C6 /* RenderCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RenderCore.h; path = Graphic/RenderCore.h; sourceTree = "<group>"; };
 		CF7B773915907F79006F03C6 /* RenderCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RenderCore.m; path = Graphic/RenderCore.m; sourceTree = "<group>"; };
 		CF7B773F15908129006F03C6 /* TaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TaskManager.h; path = Task/TaskManager.h; sourceTree = "<group>"; };
 		CF7B774015908129006F03C6 /* TaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TaskManager.m; path = Task/TaskManager.m; sourceTree = "<group>"; };
 		CF7B774215908F23006F03C6 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Task.h; path = Task/Task.h; sourceTree = "<group>"; };
 		CF7B774315908F23006F03C6 /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Task.m; path = Task/Task.m; sourceTree = "<group>"; };
-		CF7E1DE715661A13005D58C9 /* HIFramework_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HIFramework_icon.png; sourceTree = "<group>"; };
 		CF7E1DEB15661E12005D58C9 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		CF7E1DEE15661E9A005D58C9 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		CF7E1DF015661F6B005D58C9 /* HIFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HIFramework.h; sourceTree = "<group>"; };
@@ -155,7 +176,7 @@
 		CF4C16F41563FE7B0078F4D6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CF4C16F31563FE7B0078F4D6 /* HIFramework.app */,
+				CF4C16F31563FE7B0078F4D6 /* YummyLeaf.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -193,10 +214,10 @@
 		CF4C16FE1563FE7B0078F4D6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CF4C16FF1563FE7B0078F4D6 /* HIFramework-Info.plist */,
+				CF4C16FF1563FE7B0078F4D6 /* YummyLeaf-Info.plist */,
 				CF4C17001563FE7B0078F4D6 /* InfoPlist.strings */,
 				CF4C17031563FE7B0078F4D6 /* main.m */,
-				CF4C17051563FE7B0078F4D6 /* HIFramework-Prefix.pch */,
+				CF4C17051563FE7B0078F4D6 /* YummyLeaf-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			path = HIFramework;
@@ -212,9 +233,16 @@
 		CF786EC115B7EB1600099D71 /* YummyLeaf */ = {
 			isa = PBXGroup;
 			children = (
+				CF786EDA15B7EDE500099D71 /* Tasks */,
 				CF4C16FE1563FE7B0078F4D6 /* Supporting Files */,
 				CF4C17061563FE7B0078F4D6 /* HIAppDelegate.h */,
 				CF4C17071563FE7B0078F4D6 /* HIAppDelegate.m */,
+				CF786EDE15B7EFB100099D71 /* TaskSet.h */,
+				CF786EDF15B7EFB100099D71 /* TaskSet.m */,
+				CF786EF515B7FB9D00099D71 /* LevelInfo.h */,
+				CF786EF615B7FB9D00099D71 /* LevelInfo.m */,
+				CF786EF815B7FE8800099D71 /* LevelFactory.h */,
+				CF786EF915B7FE8900099D71 /* LevelFactory.m */,
 			);
 			name = YummyLeaf;
 			sourceTree = "<group>";
@@ -233,6 +261,7 @@
 		CF786ECB15B7EBF300099D71 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				CF786EEA15B7F78F00099D71 /* title.png */,
 				CF786ED815B7EC9D00099D71 /* gameover.png */,
 				CF786ECC15B7EC8400099D71 /* achieve_bg.png */,
 				CF786ECD15B7EC8400099D71 /* bg.png */,
@@ -242,6 +271,21 @@
 				CF786ED115B7EC8400099D71 /* snake_head_leaf.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		CF786EDA15B7EDE500099D71 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				CF786EDB15B7EE3600099D71 /* LogoTask.h */,
+				CF786EDC15B7EE3600099D71 /* LogoTask.m */,
+				CF786EE115B7F37100099D71 /* BeginTask.h */,
+				CF786EE215B7F37100099D71 /* BeginTask.m */,
+				CF786EE415B7F38400099D71 /* GameTask.h */,
+				CF786EE515B7F38400099D71 /* GameTask.m */,
+				CF786EE715B7F41700099D71 /* EndTask.h */,
+				CF786EE815B7F41700099D71 /* EndTask.m */,
+			);
+			name = Tasks;
 			sourceTree = "<group>";
 		};
 		CF7B773B15907FBD006F03C6 /* Task */ = {
@@ -290,7 +334,6 @@
 			children = (
 				CF786ECB15B7EBF300099D71 /* images */,
 				CF786ECA15B7EBE700099D71 /* sounds */,
-				CF7E1DE715661A13005D58C9 /* HIFramework_icon.png */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -310,9 +353,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CF4C16F21563FE7B0078F4D6 /* HIFramework */ = {
+		CF4C16F21563FE7B0078F4D6 /* YummyLeaf */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CF4C17111563FE7B0078F4D6 /* Build configuration list for PBXNativeTarget "HIFramework" */;
+			buildConfigurationList = CF4C17111563FE7B0078F4D6 /* Build configuration list for PBXNativeTarget "YummyLeaf" */;
 			buildPhases = (
 				CF4C16EF1563FE7B0078F4D6 /* Sources */,
 				CF4C16F01563FE7B0078F4D6 /* Frameworks */,
@@ -322,9 +365,9 @@
 			);
 			dependencies = (
 			);
-			name = HIFramework;
+			name = YummyLeaf;
 			productName = HIFramework;
-			productReference = CF4C16F31563FE7B0078F4D6 /* HIFramework.app */;
+			productReference = CF4C16F31563FE7B0078F4D6 /* YummyLeaf.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -335,7 +378,7 @@
 			attributes = {
 				LastUpgradeCheck = 0420;
 			};
-			buildConfigurationList = CF4C16ED1563FE7B0078F4D6 /* Build configuration list for PBXProject "HIFramework" */;
+			buildConfigurationList = CF4C16ED1563FE7B0078F4D6 /* Build configuration list for PBXProject "YummyLeaf" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -347,7 +390,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CF4C16F21563FE7B0078F4D6 /* HIFramework */,
+				CF4C16F21563FE7B0078F4D6 /* YummyLeaf */,
 			);
 		};
 /* End PBXProject section */
@@ -358,7 +401,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF4C17021563FE7B0078F4D6 /* InfoPlist.strings in Resources */,
-				CF7E1DE815661A13005D58C9 /* HIFramework_icon.png in Resources */,
 				CF786EC615B7EBE100099D71 /* bgm.mp3 in Resources */,
 				CF786EC715B7EBE100099D71 /* eat.wav in Resources */,
 				CF786EC815B7EBE100099D71 /* right.wav in Resources */,
@@ -370,6 +412,7 @@
 				CF786ED615B7EC8400099D71 /* ggj2012logo.png in Resources */,
 				CF786ED715B7EC8400099D71 /* snake_head_leaf.png in Resources */,
 				CF786ED915B7EC9D00099D71 /* gameover.png in Resources */,
+				CF786EEB15B7F78F00099D71 /* title.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +437,13 @@
 				CF76B95C15AFC80D00D34DC1 /* UIWidget.m in Sources */,
 				CF786EB115B7A8D500099D71 /* SoundManager.m in Sources */,
 				CF786EB915B7C2FF00099D71 /* PlayerController.m in Sources */,
+				CF786EDD15B7EE3600099D71 /* LogoTask.m in Sources */,
+				CF786EE015B7EFB100099D71 /* TaskSet.m in Sources */,
+				CF786EE315B7F37100099D71 /* BeginTask.m in Sources */,
+				CF786EE615B7F38400099D71 /* GameTask.m in Sources */,
+				CF786EE915B7F41700099D71 /* EndTask.m in Sources */,
+				CF786EF715B7FB9D00099D71 /* LevelInfo.m in Sources */,
+				CF786EFA15B7FE8900099D71 /* LevelFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,10 +508,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HIFramework/HIFramework-Prefix.pch";
-				INFOPLIST_FILE = "HIFramework/HIFramework-Info.plist";
+				GCC_PREFIX_HEADER = "HIFramework/YummyLeaf-Prefix.pch";
+				INFOPLIST_FILE = "HIFramework/YummyLeaf-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = YummyLeaf;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -471,10 +521,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HIFramework/HIFramework-Prefix.pch";
-				INFOPLIST_FILE = "HIFramework/HIFramework-Info.plist";
+				GCC_PREFIX_HEADER = "HIFramework/YummyLeaf-Prefix.pch";
+				INFOPLIST_FILE = "HIFramework/YummyLeaf-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = YummyLeaf;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -483,7 +533,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CF4C16ED1563FE7B0078F4D6 /* Build configuration list for PBXProject "HIFramework" */ = {
+		CF4C16ED1563FE7B0078F4D6 /* Build configuration list for PBXProject "YummyLeaf" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF4C170F1563FE7B0078F4D6 /* Debug */,
@@ -492,7 +542,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CF4C17111563FE7B0078F4D6 /* Build configuration list for PBXNativeTarget "HIFramework" */ = {
+		CF4C17111563FE7B0078F4D6 /* Build configuration list for PBXNativeTarget "YummyLeaf" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF4C17121563FE7B0078F4D6 /* Debug */,

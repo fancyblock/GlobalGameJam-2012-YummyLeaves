@@ -10,4 +10,28 @@
 
 @implementation TaskSet
 
+static TaskSet* m_instance = nil;
+
+@synthesize _endTask;
+@synthesize _gameTask;
+@synthesize _logoTask;
+@synthesize _beginTask;
+
+@synthesize _curLevel;
+@synthesize _rotateSpeed;
+
+@synthesize _touchSE;
+
+
+
++ (TaskSet*)sharedInstance
+{
+    if( m_instance == nil )
+    {
+        m_instance = [[TaskSet alloc] init];
+    }
+    
+    return m_instance;
+}
+
 @end
