@@ -122,6 +122,8 @@ const float L_ROUND = M_PI * 2;
 - (void)onEnd
 {
     //TODO 
+    
+    [[RenderCore sharedInstance] CleanTextures];
 }
 
 

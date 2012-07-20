@@ -30,6 +30,7 @@
 - (void)onEnd
 {
     [m_bg release];
+    [[RenderCore sharedInstance] CleanTextures];
 }
 
 - (void)onFrame:(float)elapse
