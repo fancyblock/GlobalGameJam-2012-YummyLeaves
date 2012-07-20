@@ -13,6 +13,12 @@
 
 const float L_ROUND = M_PI * 2;
 
+@interface GameTask(private)
+
+- (void)restart;
+
+@end
+
 
 @implementation GameTask
 
@@ -45,6 +51,7 @@ const float L_ROUND = M_PI * 2;
             offsetV = 0.250f;
         }
         [leafSpr SetUVFrom:CGPointMake(li._u, li._v) to:CGPointMake(li._u + offsetU, li._v + offsetV)];
+        //TODO 
         
         [m_leafs addObject:leafSpr];
         
@@ -53,14 +60,23 @@ const float L_ROUND = M_PI * 2;
     }
     
     m_snakeHead = [[GraphicFactory sharedInstance] CreateMovieClip:@"snake_head_leaf.png" withInterval:0.167f];
-    [m_snakeHead AddFrame:CGRectMake(0, 0, 117.0f/256.0f, 65.0f/256.0f) withAnchor:CGPointMake(0, 0 )];
-    [m_snakeHead AddFrame:CGRectMake(119.0f/256.0f, 0, 117.0f/256.0f, 65.0f/256.0f) withAnchor:CGPointMake(0, 0 )];
-    [m_snakeHead AddFrame:CGRectMake(0, 67.0f/256.0f, 117.0f/256.0f, 65.0f/256.0f) withAnchor:CGPointMake(0, 0 )];
-    [m_snakeHead AddFrame:CGRectMake(0, 134.0f/256.0f, 117.0f/256.0f, 65.0f/256.0f) withAnchor:CGPointMake(0, 0 )];
+    [m_snakeHead AddFrame:CGRectMake(0, 0, 117.0f/256.0f, 65.0f/256.0f)
+               withAnchor:CGPointMake(0, 0) 
+                 withSize:CGPointMake(117, 65)];
+    [m_snakeHead AddFrame:CGRectMake(119.0f/256.0f, 0, (117.0f+119.0f)/256.0f, 65.0f/256.0f)
+               withAnchor:CGPointMake(0, 0 )
+                 withSize:CGPointMake( 117, 65 )];
+    [m_snakeHead AddFrame:CGRectMake(0, 67.0f/256.0f, 117.0f/256.0f, (67.0f+65.0f)/256.0f) 
+               withAnchor:CGPointMake(0, 0 )
+                 withSize:CGPointMake( 117, 65 )];
+    [m_snakeHead AddFrame:CGRectMake(0, 134.0f/256.0f, 117.0f/256.0f, (134.0f+65.0f)/256.0f) 
+               withAnchor:CGPointMake(0, 0 )
+                 withSize:CGPointMake(117, 65)];
     [m_snakeHead SetPosition:CGPointMake( 88, 284 )];     //[TEMP] 284
     m_snakeBody = [[GraphicFactory sharedInstance] CreateSprite:@"deco.png"];
     [m_snakeBody SetUVFrom:CGPointMake(0, 0) to:CGPointMake(181.0f/512.0f, 181.0f/512.0f)];
     [m_snakeBody SetAnchor:CGPointMake(0.5f, 0.5f)];
+    [m_snakeBody SetSize:CGPointMake(181, 181)];
     m_bg = [[GraphicFactory sharedInstance] CreateSprite:@"bg.png"];
     [m_bg SetUVFrom:CGPointMake(0, 0) to:CGPointMake(1, 1)];
     m_bg2 = [[GraphicFactory sharedInstance] CreateSprite:@"bg2.png"];
@@ -68,12 +84,15 @@ const float L_ROUND = M_PI * 2;
     m_aimFrame1 = [[GraphicFactory sharedInstance] CreateSprite:@"deco.png"];
     [m_aimFrame1 SetUVFrom:CGPointMake(183.0f/512.0f, 0) to:CGPointMake((float)(183+131)/512.0f, 116.0f/512.0f)];
     [m_aimFrame1 SetAnchor:CGPointMake(0.5f, 0.5f)];
+    [m_aimFrame1 SetSize:CGPointMake(131, 116)];
     m_aimFrame2 = [[GraphicFactory sharedInstance] CreateSprite:@"deco.png"];
     [m_aimFrame2 SetUVFrom:CGPointMake(316.0f/512.0f, 0) to:CGPointMake((float)(316+131)/512.0f, 116.0f/512.0f)];
     [m_aimFrame2 SetAnchor:CGPointMake(0.5f, 0.5f)];
+    [m_aimFrame2 SetSize:CGPointMake(131, 116)];
     m_aimFrame3 = [[GraphicFactory sharedInstance] CreateSprite:@"deco.png"];
     [m_aimFrame3 SetUVFrom:CGPointMake(321.0f/512.0f, 199.0f/512.0f) to:CGPointMake((float)(321+131)/512.0f, (float)(116.0f+199)/512.0f)];
     [m_aimFrame3 SetAnchor:CGPointMake(0.5f, 0.5f)];
+    [m_aimFrame3 SetSize:CGPointMake(131, 116)];
     m_levels = [[NSMutableArray alloc] init];
     Sprite* levelSpr = nil;
     levelSpr = [[GraphicFactory sharedInstance] CreateSprite:@"achieve_bg.png"];
@@ -82,30 +101,38 @@ const float L_ROUND = M_PI * 2;
     [levelSpr release];
     levelSpr = [[GraphicFactory sharedInstance] CreateSprite:@"achieve_bg.png"];
     [levelSpr SetUVFrom:CGPointMake(322.0f/1024.0f, 0) to:CGPointMake((322.0f+320.0f)/1024.0f, 217.0f/1024.0f)];
+    [levelSpr SetSize:CGPointMake(320, 217)];
     [m_levels addObject:levelSpr];
     [levelSpr release];
     levelSpr = [[GraphicFactory sharedInstance] CreateSprite:@"achieve_bg.png"];
     [levelSpr SetUVFrom:CGPointMake(644.0f/1024.0f, 0) to:CGPointMake((644.0f+320.0f)/1024.0f, 217.0f/1024.0f)];
+    [levelSpr SetSize:CGPointMake(320, 217)];
     [m_levels addObject:levelSpr];
     [levelSpr release];
     levelSpr = [[GraphicFactory sharedInstance] CreateSprite:@"achieve_bg.png"];
     [levelSpr SetUVFrom:CGPointMake(0, 219.0f/1024.0f) to:CGPointMake(320.0f/1024.0f, (219.0f+217.0f)/1024.0f)];
+    [levelSpr SetSize:CGPointMake(320, 217)];
     [m_levels addObject:levelSpr];
     [levelSpr release];
     levelSpr = [[GraphicFactory sharedInstance] CreateSprite:@"achieve_bg.png"];
     [levelSpr SetUVFrom:CGPointMake(0, 438.0f/1024.0f) to:CGPointMake(320.0f/1024.0f, (438.0f+217.0f)/1024.0f)];
+    [levelSpr SetSize:CGPointMake(320, 217)];
     [m_levels addObject:levelSpr];
     [levelSpr release];
     levelSpr = [[GraphicFactory sharedInstance] CreateSprite:@"achieve_bg.png"];
     [levelSpr SetUVFrom:CGPointMake(0, 657.0f/1024.0f) to:CGPointMake(320.0f/1024.0f, (657.0f+217.0f)/1024.0f)];
+    [levelSpr SetSize:CGPointMake(320, 217)];
     [m_levels addObject:levelSpr];
     [levelSpr release];
     m_bigSnake1 = [[GraphicFactory sharedInstance] CreateSprite:@"achieve_bg.png"];
     [m_bigSnake1 SetUVFrom:CGPointMake(344.0f/1024.0f, 304.0f/1024.0f) to:CGPointMake((344.0f+320.0f)/1024.0f, (512.0f+304.0f)/1024.0f)];
+    [m_bigSnake1 SetSize:CGPointMake(320, 512)];
     m_bigSnake2 = [[GraphicFactory sharedInstance] CreateSprite:@"achieve_bg.png"];
     [m_bigSnake2 SetUVFrom:CGPointMake(686.0f/1024.0f, 302.0f/1024.0f) to:CGPointMake((686.0f+320.0f)/1024.0f, (512.0f+302.0f)/1024.0f)];
+    [m_bigSnake2 SetSize:CGPointMake(320, 512)];
     m_failMark = [[GraphicFactory sharedInstance] CreateSprite:@"deco.png"];
     [m_failMark SetUVFrom:CGPointMake(243.0f/512.0f, 244.0f/512.0f) to:CGPointMake((243.0f+26.0f)/512.0f, (244.0f+25.0f)/512.0f)];
+    [m_failMark SetSize:CGPointMake(26, 25)];
     
     m_progressUI = [[ProgressUI alloc] init];
     [m_progressUI SetMark:0];
@@ -155,79 +182,66 @@ const float L_ROUND = M_PI * 2;
     
     if( m_state == STATE_COMPLETE )
     {
-        //TODO 
-    }
-    else 
-    {
-        //TODO 
-    }
-    
-    //-----------------------------------
-    /*
-    if( m_state == STATE_COMPLETE )
-    {
         if( m_bigSnakeTime < 50 )
         {
-            m_bigSnake1.Draw( 0, 100 - m_bigSnakeTime * 6 );
+            [m_bigSnake1 DrawAt:CGPointMake(0, 100-m_bigSnakeTime*6)];
         }
         else if( m_bigSnakeTime < 70 )
         {
-            m_bigSnake1.Draw( 0, -200 );
+            [m_bigSnake1 DrawAt:CGPointMake(0, -200)];
         }
-        
         if( m_bigSnakeTime > 70 )
         {
-            m_levels[0].Draw( 0, 20 );
+            [[m_levels objectAtIndex:0] DrawAt:CGPointMake(0, 20)];
         }
         else
         {
-            m_levels[m_mark].Draw( 0, 20 );
+            [[m_levels objectAtIndex:m_mark] DrawAt:CGPointMake(0, 20)];
         }
         
         if( m_bigSnakeTime >= 50 )
         {       
-            m_bigSnake2.Draw( 0, -512 + ( m_bigSnakeTime - 50 ) * 13 );
+            [m_bigSnake2 DrawAt:CGPointMake(0, -512 + ( m_bigSnakeTime - 50 ) * 13)];
         }
         
         m_bigSnakeTime++;
         
         if( m_bigSnakeTime > 140 )
         {
-            restart();
+            [self restart];
         }
     }
-    else
+    else 
     {
-        m_levels[m_mark].Draw( 0, 20 );
+        [[m_levels objectAtIndex:m_mark] DrawAt:CGPointMake(0, 20)];
     }
     
-    m_bg2.Draw( 0, 237, 320, 323 );
-    m_progressUI.Draw( 45, 20 );
+    [m_bg2 DrawAt:CGPointMake(0, 237) withSize:CGPointMake(320, 323)];
+    [m_progressUI Draw:CGPointMake(45, 20)];
     
     if( m_sunFlashTime > 0 )
     {
-        m_aimFrame1.Draw( 160, 258 );
+        [m_aimFrame1 DrawAt:CGPointMake(160, 258)];
         m_sunFlashTime--;
     }
     else
     {
-        m_aimFrame2.Draw( 160, 258 );
+        [m_aimFrame2 DrawAt:CGPointMake(160, 258)];
     }
-    //m_aimFrame3.Draw( 160, 258 );
     
     int i;
     for( i = 0; i < m_failTimes; i++ )
     {
-        m_failMark.Draw( 225 + i * 28, 530 );
+        [m_failMark DrawAt:CGPointMake(255+i*28, 450)];
     }
     
-    SubLeafInfo subLeaf;
+    SubLeafInfo* subLeaf = nil;
     float leafAngle;
-    
-    boolean aimLeaf = false;
+    /*
+    BOOL aimLeaf = NO;
     for( i = 0; i < m_lvInfo._leafCnt; i++ )
     {
-        subLeaf = m_lvInfo._subLeaves[i];
+        subLeaf = [m_lvInfo._subLeaves objectAtIndex:i];
         
         leafAngle = m_curAngle + subLeaf._offset * m_angleInterval;
         leafAngle = normalizeAngle( leafAngle );
@@ -247,6 +261,7 @@ const float L_ROUND = M_PI * 2;
     m_snakeBody.Draw( 160.0f, 386.0f, -m_curAngle );
     m_snakeHead.Draw();
      */
+    
 }
 
 
@@ -260,6 +275,12 @@ const float L_ROUND = M_PI * 2;
 
 
 //---------------------------- private function -----------------------------
+
+
+- (void)restart
+{
+    //TODO 
+}
 
 
 
