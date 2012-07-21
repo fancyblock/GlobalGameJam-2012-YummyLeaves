@@ -9,13 +9,23 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
-	<array/>
+	<array>
+		<string>icon_iphone.png</string>
+		<string>icon_iphoneh.png</string>
+		<string>icon_ipad.png</string>
+		<string>icon_ipadh.png</string>
+	</array>
 	<key>CFBundleIcons</key>
 	<dict>
 		<key>CFBundlePrimaryIcon</key>
 		<dict>
 			<key>CFBundleIconFiles</key>
-			<array/>
+			<array>
+				<string>icon_iphone.png</string>
+				<string>icon_iphoneh.png</string>
+				<string>icon_ipad.png</string>
+				<string>icon_ipadh.png</string>
+			</array>
 			<key>UIPrerenderedIcon</key>
 			<true/>
 		</dict>

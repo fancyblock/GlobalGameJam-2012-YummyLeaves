@@ -118,7 +118,7 @@
  * @return  none
  */
 - (void)dealloc
-{
+{ 
     [m_glViewController release];
     [m_glView release];
     [m_glContext release];

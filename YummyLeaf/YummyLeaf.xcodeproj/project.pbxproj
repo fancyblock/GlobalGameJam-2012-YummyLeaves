@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF0B5F5D15BABB71004DBDF9 /* icon_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = CF0B5F5C15BABB71004DBDF9 /* icon_iphone.png */; };
+		CF0B5F5F15BABB77004DBDF9 /* icon_iphoneh.png in Resources */ = {isa = PBXBuildFile; fileRef = CF0B5F5E15BABB77004DBDF9 /* icon_iphoneh.png */; };
+		CF0B5F6115BABB82004DBDF9 /* icon_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = CF0B5F6015BABB82004DBDF9 /* icon_ipad.png */; };
+		CF0B5F6315BABB89004DBDF9 /* icon_ipadh.png in Resources */ = {isa = PBXBuildFile; fileRef = CF0B5F6215BABB89004DBDF9 /* icon_ipadh.png */; };
 		CF30A79315AF340200AAE45D /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF30A79215AF340200AAE45D /* OpenAL.framework */; };
 		CF30A79615AF340D00AAE45D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF30A79515AF340D00AAE45D /* AudioToolbox.framework */; };
 		CF4838381593890500529A53 /* TouchEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4838371593890500529A53 /* TouchEvent.m */; };
@@ -55,6 +59,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF0B5F5C15BABB71004DBDF9 /* icon_iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_iphone.png; sourceTree = "<group>"; };
+		CF0B5F5E15BABB77004DBDF9 /* icon_iphoneh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_iphoneh.png; sourceTree = "<group>"; };
+		CF0B5F6015BABB82004DBDF9 /* icon_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_ipad.png; sourceTree = "<group>"; };
+		CF0B5F6215BABB89004DBDF9 /* icon_ipadh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_ipadh.png; sourceTree = "<group>"; };
 		CF30A79215AF340200AAE45D /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		CF30A79515AF340D00AAE45D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		CF4838361593890500529A53 /* TouchEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TouchEvent.h; path = Events/TouchEvent.h; sourceTree = "<group>"; };
@@ -176,6 +184,10 @@
 		CF4C16E81563FE7B0078F4D6 = {
 			isa = PBXGroup;
 			children = (
+				CF0B5F6215BABB89004DBDF9 /* icon_ipadh.png */,
+				CF0B5F6015BABB82004DBDF9 /* icon_ipad.png */,
+				CF0B5F5E15BABB77004DBDF9 /* icon_iphoneh.png */,
+				CF0B5F5C15BABB71004DBDF9 /* icon_iphone.png */,
 				CF7E1DEA15661A20005D58C9 /* Resource */,
 				CF4C16FD1563FE7B0078F4D6 /* HIFramework */,
 				CF786EC115B7EB1600099D71 /* YummyLeaf */,
@@ -428,6 +440,10 @@
 				CF786ED715B7EC8400099D71 /* snake_head_leaf.png in Resources */,
 				CF786ED915B7EC9D00099D71 /* gameover.png in Resources */,
 				CF786EEB15B7F78F00099D71 /* title.png in Resources */,
+				CF0B5F5D15BABB71004DBDF9 /* icon_iphone.png in Resources */,
+				CF0B5F5F15BABB77004DBDF9 /* icon_iphoneh.png in Resources */,
+				CF0B5F6115BABB82004DBDF9 /* icon_ipad.png in Resources */,
+				CF0B5F6315BABB89004DBDF9 /* icon_ipadh.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
