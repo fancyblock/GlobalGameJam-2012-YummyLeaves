@@ -12,8 +12,8 @@
 
 @property (nonatomic, readwrite) int _type;
 @property (nonatomic, readwrite) int _offset;
-@property (nonatomic, readwrite) int _u;
-@property (nonatomic, readwrite) int _v;
+@property (nonatomic, readwrite) float _u;
+@property (nonatomic, readwrite) float _v;
 @property (nonatomic, retain) NSString* _res;
 
 @end

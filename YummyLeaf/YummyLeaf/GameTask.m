@@ -16,6 +16,9 @@ const float L_ROUND = M_PI * 2;
 @interface GameTask(private)
 
 - (void)restart;
+- (float)normalizeAngle:(float)angle;
+- (int)matchLeaf;
+- (void)levelComplete;
 
 @end
 
@@ -51,7 +54,7 @@ const float L_ROUND = M_PI * 2;
             offsetV = 0.250f;
         }
         [leafSpr SetUVFrom:CGPointMake(li._u, li._v) to:CGPointMake(li._u + offsetU, li._v + offsetV)];
-        //TODO 
+        [leafSpr SetSize:CGPointMake(32, 64)];
         
         [m_leafs addObject:leafSpr];
         
@@ -63,13 +66,13 @@ const float L_ROUND = M_PI * 2;
     [m_snakeHead AddFrame:CGRectMake(0, 0, 117.0f/256.0f, 65.0f/256.0f)
                withAnchor:CGPointMake(0, 0) 
                  withSize:CGPointMake(117, 65)];
-    [m_snakeHead AddFrame:CGRectMake(119.0f/256.0f, 0, (117.0f+119.0f)/256.0f, 65.0f/256.0f)
+    [m_snakeHead AddFrame:CGRectMake(119.0f/256.0f, 0, (117.0f)/256.0f, 65.0f/256.0f)
                withAnchor:CGPointMake(0, 0 )
                  withSize:CGPointMake( 117, 65 )];
-    [m_snakeHead AddFrame:CGRectMake(0, 67.0f/256.0f, 117.0f/256.0f, (67.0f+65.0f)/256.0f) 
+    [m_snakeHead AddFrame:CGRectMake(0, 67.0f/256.0f, 117.0f/256.0f, (65.0f)/256.0f) 
                withAnchor:CGPointMake(0, 0 )
                  withSize:CGPointMake( 117, 65 )];
-    [m_snakeHead AddFrame:CGRectMake(0, 134.0f/256.0f, 117.0f/256.0f, (134.0f+65.0f)/256.0f) 
+    [m_snakeHead AddFrame:CGRectMake(0, 134.0f/256.0f, 117.0f/256.0f, (65.0f)/256.0f) 
                withAnchor:CGPointMake(0, 0 )
                  withSize:CGPointMake(117, 65)];
     [m_snakeHead SetPosition:CGPointMake( 88, 284 )];     //[TEMP] 284
@@ -97,6 +100,7 @@ const float L_ROUND = M_PI * 2;
     Sprite* levelSpr = nil;
     levelSpr = [[GraphicFactory sharedInstance] CreateSprite:@"achieve_bg.png"];
     [levelSpr SetUVFrom:CGPointMake(0, 0) to:CGPointMake(320.0f/1024.0f, 217.0f/1024.0f)];
+    [levelSpr SetSize:CGPointMake(320, 217)];
     [m_levels addObject:levelSpr];
     [levelSpr release];
     levelSpr = [[GraphicFactory sharedInstance] CreateSprite:@"achieve_bg.png"];
@@ -139,16 +143,30 @@ const float L_ROUND = M_PI * 2;
     
     m_state = STATE_RUNNING;
     m_mark = 0;
-    m_failMark = 0;
+    m_failTimes = 0;
     
     [[SoundManager sharedInstance] PlaySound:[TaskSet sharedInstance]._bgm withLoop:INFINITE_LOOP];
-    
 }
 
 
 - (void)onEnd
 {
-    //TODO 
+    [m_lvInfo release];
+    [m_leafs removeAllObjects];
+    [m_leafs release];
+    [m_snakeBody release];
+    [m_snakeHead release];
+    [m_bg2 release];
+    [m_bg release];
+    [m_aimFrame1 release];
+    [m_aimFrame2 release];
+    [m_aimFrame3 release];
+    [m_levels removeAllObjects];
+    [m_levels release];
+    [m_bigSnake1 release];
+    [m_bigSnake2 release];
+    [m_failMark release];
+    [m_progressUI release];
     
     [[RenderCore sharedInstance] CleanTextures];
 }
@@ -230,44 +248,90 @@ const float L_ROUND = M_PI * 2;
     }
     
     int i;
-    for( i = 0; i < m_failTimes; i++ )
-    {
-        [m_failMark DrawAt:CGPointMake(255+i*28, 450)];
-    }
     
     SubLeafInfo* subLeaf = nil;
     float leafAngle;
-    /*
+    
     BOOL aimLeaf = NO;
     for( i = 0; i < m_lvInfo._leafCnt; i++ )
     {
+        Sprite* spr = nil;
         subLeaf = [m_lvInfo._subLeaves objectAtIndex:i];
         
         leafAngle = m_curAngle + subLeaf._offset * m_angleInterval;
-        leafAngle = normalizeAngle( leafAngle );
+        leafAngle = [self normalizeAngle:leafAngle];
         
-        m_leafs[subLeaf._type].SetAnchor( 16, 155 );
-        m_leafs[subLeaf._type].Draw( 160, 386, -leafAngle );
+        spr = [m_leafs objectAtIndex:subLeaf._type];
+        [spr SetAnchor:CGPointMake( 0.5f, 2.422f )];
+        [spr SetColorR:1.0f andG:1.0f andB:1.0f andAlpha:1.0f];
+        [spr DrawAt:CGPointMake(160, 386) withAngle:-leafAngle];
         
         if( subLeaf._type == m_lvInfo._matchLeafType && !aimLeaf )
         {
-            m_leafs[subLeaf._type].SetAnchor( 16, 32 );
-            m_leafs[subLeaf._type].Draw( 160.0f, 386.0f, m_lvInfo._aimAngle );
+            spr = [m_leafs objectAtIndex:subLeaf._type];
+            [spr SetAnchor:CGPointMake(0.5f, 0.5f)];
+            [spr SetColorR:0.0f andG:0.0f andB:0.0f andAlpha:1.0f];
+            [spr DrawAt:CGPointMake(160, 386) withAngle:m_lvInfo._aimAngle];
             
-            aimLeaf = true;
+            aimLeaf = YES;
         }
     }
     
-    m_snakeBody.Draw( 160.0f, 386.0f, -m_curAngle );
-    m_snakeHead.Draw();
-     */
+    [m_snakeBody DrawAt:CGPointMake(160, 386) withAngle:-m_curAngle];
+    [m_snakeHead Draw];
+    
+    for( i = 0; i < m_failTimes; i++ )
+    {
+        [m_failMark DrawAt:CGPointMake(235+i*28, 450)];
+    }
     
 }
 
 
 - (BOOL)onTouchEvent:(NSArray*)events
 {
-    //TODO 
+    TouchEvent *evt = [events objectAtIndex:0];
+    
+    if( evt != nil && m_state == STATE_RUNNING )
+    {
+        if( evt.TOUCH_TYPE == TOUCH )
+        {
+            int index = [self matchLeaf];
+            
+            if( index >= 0 )
+            {
+                if( m_mark < 5 )
+                {
+                    m_mark++;
+                    [m_progressUI SetMark:m_mark];
+                    
+                    m_lvInfo = [[LevelFactory sharedInstance] CreateLevel:0];
+                    
+                    m_sunFlashTime = 14;
+                    
+                    [[SoundManager sharedInstance] PlaySound:[TaskSet sharedInstance]._matchSE withLoop:1];
+                }
+                else
+                {
+                    [self levelComplete];
+                }
+                
+                return true;
+            }
+            else
+            {
+                // wrong
+                [[SoundManager sharedInstance] PlaySound:[TaskSet sharedInstance]._touchSE withLoop:1];
+                
+                m_failTimes++;
+                
+                if( m_failTimes >= 3 )
+                {
+                    m_state = STATE_GAMEOVER;
+                }
+            }
+        }
+    }
     
     return NO;
 }
@@ -279,7 +343,69 @@ const float L_ROUND = M_PI * 2;
 
 - (void)restart
 {
-    //TODO 
+    [m_lvInfo release];
+    m_lvInfo = [[LevelFactory sharedInstance] CreateLevel:0];
+    m_state = STATE_RUNNING;
+    m_mark = 0;
+    m_failTimes = 0;
+    m_sunFlashTime = 0;
+    [m_progressUI SetMark:0];
+    
+    [TaskSet sharedInstance]._rotateSpeed += 0.005f;
+}
+
+- (int)matchLeaf
+{
+    int cnt = m_lvInfo._leafCnt;
+    SubLeafInfo* subLeaf;
+    float leafAngle;
+    
+    for( int i = 0; i < cnt; i++ )
+    {
+        subLeaf = [m_lvInfo._subLeaves objectAtIndex:i];
+        
+        leafAngle = m_curAngle + subLeaf._offset * m_angleInterval;
+        leafAngle = [self normalizeAngle:leafAngle];
+        
+        // find the leaf match the pattern
+        float absAngle = leafAngle;
+        if( absAngle < 0 )
+        {
+            absAngle = -absAngle;
+        }
+        
+        if( absAngle < m_lvInfo._epsion && subLeaf._type == m_lvInfo._matchLeafType )
+        {
+            return i;
+        }
+    }
+    
+    return -1;
+}
+
+- (void)levelComplete
+{
+    m_state = STATE_COMPLETE;
+    m_bigSnakeTime = 0;
+    
+    [[SoundManager sharedInstance] PlaySound:[TaskSet sharedInstance]._eatSE withLoop:1];
+}
+
+- (float)normalizeAngle:(float)angle
+{
+    float ang = angle;
+    
+    while( ang >= L_ROUND )
+    {
+        ang -= L_ROUND;
+    }
+    
+    if( ang > ( L_ROUND / 2.0f ) )
+    {
+        ang = ang - L_ROUND;
+    }
+    
+    return ang;
 }
 
 

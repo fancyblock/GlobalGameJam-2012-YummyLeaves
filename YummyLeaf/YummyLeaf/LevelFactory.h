@@ -16,8 +16,8 @@
 @interface LevelFactory : NSObject
 {
     NSMutableArray* m_resLib;
-    int m_uLib[MAX_LEAF];
-    int m_vLib[MAX_LEAF];
+    float m_uLib[MAX_LEAF];
+    float m_vLib[MAX_LEAF];
 }
 
 + (LevelFactory*)sharedInstance;
