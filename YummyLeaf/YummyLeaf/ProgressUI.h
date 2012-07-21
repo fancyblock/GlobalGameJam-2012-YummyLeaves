@@ -7,12 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HIFramework.h"
 
 @interface ProgressUI : NSObject
 {
     int m_mark;
     
-    //TODO 
+    Sprite* m_sandglass;
+    Sprite* m_leftBar;
+    Sprite* m_rightBar;
+    MovieClip* m_snake;
 }
 
 - (void)Update:(float)elapse;
